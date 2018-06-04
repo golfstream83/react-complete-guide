@@ -13,7 +13,7 @@ class App extends Component {
       {id: 'ar84', name: 'Stan', age: 31}       
     ],
     showPersons: false
-  }
+  };
 
   nameChangedHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(p => {
@@ -30,18 +30,18 @@ class App extends Component {
     persons[personIndex] = person;
 
     this.setState({persons: persons})
-  }
+  };
 
   deletePersonHandler = (personIndex) => {
     const persons = [...this.state.persons];
     persons.splice(personIndex, 1);
     this.setState({persons: persons});
-  }
+  };
 
   togglePersonsHandler = () => {
     const doesShow = this.state.showPersons;
     this.setState({showPersons: !doesShow});
-  }
+  };
 
   render() {
     let persons = null;
@@ -55,7 +55,6 @@ class App extends Component {
 
     return (
       <div className={classes.App}>
-        <button onClick={() => {this.setState({showPersons: true})}}>Show Persons</button>
         <Cockpit
           appTitle={this.props.title}
           showPersons={this.state.showPersons}
