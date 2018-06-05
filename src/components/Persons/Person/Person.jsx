@@ -1,18 +1,19 @@
 import React, {Component} from 'react';
 
 import classes from './Person.css';
-import WithClass from '../../../hocs/WithClass';
+import withClass from '../../../hocs/withClass';
+import Auxiliary from '../../../hocs/Auxiliary';
 
 class Person extends Component {
   render () {
     return (
-      <WithClass classes={classes.Person}>
+      <Auxiliary>
         <p onClick={this.props.click}>I'm a {this.props.name} and I am {this.props.age} years old!</p>
         <p>{this.props.children}</p>
         <input type="text" onChange={this.props.changed} value={this.props.name} />
-      </WithClass>
+      </Auxiliary>
     );
   }
 }
 
-export default Person;
+export default withClass(Person, classes.Person);
