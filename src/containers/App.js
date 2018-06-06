@@ -4,7 +4,7 @@ import classes from './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 import Auxiliary from '../hocs/Auxiliary';
-import withClass from '../hocs/withClass';
+import withClass from '../hocs/WithClass';
 
 class App extends Component {
 
@@ -55,10 +55,10 @@ class App extends Component {
     let persons = null;
 
     if (this.state.showPersons) {
-      persons = <Persons 
-            persons={this.state.persons}
-            clicked={this.deletePersonHandler}
-            changed={this.nameChangedHandler} />
+      persons = <Persons
+        persons={this.state.persons}
+        clicked={this.deletePersonHandler}
+        changed={this.nameChangedHandler} />
     }
 
     return (
